@@ -10,16 +10,16 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
+    var currentValue = 0
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func sliderMoved(_ sender: UISlider) {
+        currentValue = lroundf(sender.value)
+        showAlert(with: currentValue)
     }
-
+   
+    func showAlert(with value : Int) {
+        print("Hello iOS, the value is currently \(value)")
+    }
 
 }
 
